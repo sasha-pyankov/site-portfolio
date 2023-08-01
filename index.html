@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#111111">
+
+  <meta name="description" content="Мой сайт - портфолио">
+  <meta name="author" content="Sasha Pyankov">
+  <meta name="image" content="img/logo.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Мой сайт - портфолио">
+  <meta property="og:description" content="Мой сайт - портфолио">
+  <meta property="og:image" content="img/logo.svg">
+  <meta name="msapplication-TileImage" content="img/logo.svg">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="address=no">
+
+  <title>site-portfolio</title>
+
+  <link rel="preload" href="fonts/MulishLightItalic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/MulishLight.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/MulishMedium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/MulishExtraBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/vendor.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script defer src="js/main.js"></script>
+</head>
+
+<body class="page__body">
+
+  <div class="mouse" aria-hidden="true">
+  <div class="mouse__view">view</div>
+</div>
+
+  <div class="site-container">
+    <header class="header">
+  <div class="header__container container">
+    <a href="#" class="header__logo">
+      <img src="img/logo.svg" alt="логотип">
+    </a>
+    <nav class="header__nav nav" title="меню" data-menu>
+      <ul class="nav__list list-reset">
+        <li class="nav__item">
+          <span class="nav__item--bg"></span>
+          <a href="#home" class="nav__link" data-scroll>главная</a>
+        </li>
+        <li class="nav__item">
+          <span class="nav__item--bg"></span>
+          <a href="#about" class="nav__link" data-scroll>обо мне</a>
+        </li>
+        <li class="nav__item">
+          <span class="nav__item--bg"></span>
+          <a href="#project" class="nav__link" data-scroll>проекты</a>
+        </li>
+        <li class="nav__item">
+          <span class="nav__item--bg"></span>
+          <a href="#contact" class="nav__link" data-scroll>контакты</a>
+        </li>
+      </ul>
+    </nav>
+    <button class="burger btn-reset" aria-label="Открыть меню" aria-expanded="false" data-burger>
+      <span class="first" id="class"></span>
+      <span class="second" id="class"></span>
+      <span class="third" id="class"></span>
+    </button>
+  </div>
+</header>
+
+    <main class="main">
+      <section class="home">
+  <div class="home__container container">
+    <div class="home__body">
+      <div class="home__content">
+        <p class="home__text">Привет! Меня зовут — Пьянков Александр.</p>
+        <h1 class="home__title">Я занимаюсь версткой сайтов</h1>
+      </div>
+      <div class="home__foto">
+        <picture>
+          <source srcset="img/home/foto.webp, img/home/foto_2x.webp 2x" type="image/webp">
+          <img loading="lazy" src="img/home/foto.png" srcset="img/home/foto_2x.png 2x" class="home__image" alt="моё фото">
+        </picture>
+      </div>
+    </div>
+  </div>
+</section>
+
+    </main>
+    <footer class="footer">
+  <div class="container"></div>
+</footer>
+
+  </div>
+</body>
+
+</html>
