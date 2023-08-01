@@ -1,0 +1,76 @@
+.mouse {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99999;
+  border-radius: 100%;
+  width: 45px;
+  height: 45px;
+  pointer-events: none;
+
+  &__view {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    width: 80px;
+    height: 80px;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: $light-color;
+    background-color: $black-color;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease-in-out;
+
+    .view-visible & {
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    box-shadow: 4px 4px 4px $beige-color;
+    background: #2d9687;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 100%;
+    width: 55px;
+    height: 55px;
+    background: $beige-color;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease-in-out;
+  }
+}
+
+.links-visible::after {
+  border: 4px solid $beige-color;
+  background-color: transparent;
+  transform: translate(-50%, -50%) scale(0.5);
+  transition: 0.3s;
+}
+
+.links-visible::before {
+  opacity: 0;
+}

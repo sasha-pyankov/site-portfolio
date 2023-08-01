@@ -1,0 +1,14 @@
+// базовые подключения
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "settings";
+
+// подключения компонентов страницы
+@import "./components/mouse";
+@import "./components/preloader";
+@import "./components/burger";
+@import "./components/header";
+@import "./components/nav";
+@import "./components/home";
+
