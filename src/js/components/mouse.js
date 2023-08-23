@@ -21,4 +21,6 @@ if (window.innerWidth >= 768) {
   _vars.imageHoverMouse.forEach(link => link.addEventListener('mouseover', () => { _vars.mouse.classList.add('view-visible') }));
   _vars.imageHoverMouse.forEach(link => link.addEventListener('mouseleave', () => { _vars.mouse.classList.remove('view-visible') }));
 
+} else {
+  _vars.mouse.style.opacity = 0;
 }
