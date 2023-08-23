@@ -853,8 +853,8 @@ a {
   }
 }
 .home__title {
-  -webkit-animation: flicker 0.5s infinite alternate 6s;
-  animation: flicker 0.5s infinite alternate 6s;
+  -webkit-animation: flicker 0.5s infinite alternate 9s;
+  animation: flicker 0.5s infinite alternate 9s;
 }
 
 @-webkit-keyframes flicker {
