@@ -1,10 +1,3 @@
-// :root {
-  // --content-width: 1170px;
-  // --container-offset: 15px;
-  // --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
-// }
-
-//variables
 $font-family: "Mulish", sans-serif;
 
 $content-width: 1300px;
@@ -13,7 +6,9 @@ $container-width: calc($content-width + ($container-offset * 2));
 
 $light-color: #fff;
 $black-color: #080808;
-$grey-color: #2d9687;
-$beige-color: #e2b8aa;
-$green-color: #e9b171;
-$pink-color: #c22085;
+$lochinvar-color: #2d9687;//$lochinvar-color
+$roseFog-color: #e2b8aa;//$roseFog-color
+$porsche-color: #e9b171;//$porsche-color
+$redViolet-color: #c22085;//$redViolet-color
+$balticSea-color: #26252a;
+$bigStone-color: #111b36;

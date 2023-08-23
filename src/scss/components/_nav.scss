@@ -9,7 +9,7 @@
   overflow-y: auto;
   width: 100%;
   height: 100%;
-  background-color: $grey-color;
+  background-color: $lochinvar-color;
   opacity: 0;
   visibility: hidden;
   transform: translateX(200%);
@@ -30,6 +30,10 @@
     overflow: hidden;
     background-color: inherit;
 
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
     &--bg {
       position: absolute;
       left: 0;
@@ -46,13 +50,9 @@
       transition: all .4s cubic-bezier(.09,1.02,.84,.7);
     }
 
-    &:not(:last-child) {
-      margin-bottom: 30px;
-    }
-
     @media (any-hover: hover) {
       &:hover {
-        color: $grey-color;
+        color: $lochinvar-color;
         .nav__item--bg {
           transform: translateX(0);
         }
@@ -66,7 +66,19 @@
     font-weight: 800;
     font-size: 5vw;
     letter-spacing: 2px;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      color: $bigStone-color;
+    }
   }
+}
+
+.nav__link.focus-visible {
+  color: $porsche-color;
 }
 
 .menu--active {

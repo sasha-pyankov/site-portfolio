@@ -3,7 +3,8 @@ export default {
   documentEl: document,
   htmlEl: document.documentElement,
   bodyEl: document.body,
-  // heroSliderEl: document?.querySelector('.hero__slider'), переменная swiper
+  objectSliderEl: document?.querySelector('.project__swiper'),
+  objectMainSliderEl: document?.querySelector('.site-container'),//удалить
   mouse: document?.querySelector('.mouse'),
   imageHoverMouse: document?.querySelectorAll('.image'),
   btnHover: document?.querySelectorAll('.btn-reset'),

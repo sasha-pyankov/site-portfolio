@@ -6,7 +6,7 @@
 <body class="page__body">
 
   @include('partials/mouse.html')
-  <!-- @include('partials/preloader.html') -->
+  @include('partials/preloader.html')
 
   <div class="site-container">
     @include('partials/header.html')
@@ -17,6 +17,30 @@
       @include('partials/contact.html')
     </main>
     @include('partials/footer.html')
+    <div class="graph-modal">
+      <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="contacts__form">
+        <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно">
+          <svg class="icon-close-modal">
+            <use xlink:href="img/sprite.svg#icon-close-modal"></use>
+          </svg>
+        </button>
+        <div class="graph-modal__content">
+          <form action="#" class="form" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="900" data-swiper-parallax-x="-1500">
+            <h3 class="form__title title-reset">Напиши мне:</h3>
+            <label class="form__label">
+              <input type="text" name="Имя" class="input-reset form__input input-name" placeholder="Имя">
+            </label>
+            <label class="form__label">
+              <input type="tel" name="Телефон" class="input-reset form__input input-tel" placeholder="Телефон">
+            </label>
+            <label class="form__label">
+              <input type="email" name="E-mail" class="input-reset form__input input-email" placeholder="E-mail">
+            </label>
+            <button class="btn-reset form__btn" aria-label="Отправить заполненную форму"><span>Отправить</span></button>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 

@@ -1,4 +1,7 @@
 //сдесь можно подключить swiper: import './components/sliders'
-// import './components/validation'
+import './components/validation'
 import './components/mouse'
-
+import './components/sliders'
+import './components/anim-text'
+import './components/small'
+import './components/gsap-anim'

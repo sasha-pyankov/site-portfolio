@@ -1,0 +1,106 @@
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background-color: $bigStone-color;
+
+  &__back {
+    font-weight: 300;
+    font-size: 360px;
+    line-height: 453px;
+    text-transform: uppercase;
+    color: $lochinvar-color;
+    opacity: 0;
+    transform: translateX(7%);
+    transition: opacity 0.3s ease-in-out;
+    animation: preloader 20s linear;
+  }
+
+  &__forward {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: 0;
+    font-weight: 300;
+    font-size: 72px;
+    line-height: 91px;
+    color: $black-color;
+    opacity: 0;
+    transform: translate(-50%, -20%);
+    transition: opacity 0.3s cubic-bezier(0.770, 0.125, 0.265, 1.040), transform 0.3s cubic-bezier(0.770, 0.125, 0.265, 1.040);
+  }
+
+  &__bg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: -1;
+    width: 400px;
+    height: 280px;
+    transform: translate(-50%, -50%);
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 0;
+      height: 100%;
+      background-color: $lochinvar-color;
+      transition: width 0.3s cubic-bezier(0.770, 0.125, 0.265, 1.040);
+    }
+  }
+}
+
+@keyframes preloader {
+  0% {
+    transform: translateX(7%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.preloader-animation .preloader__back {
+  opacity: 0.15;
+  transition: opacity 0.3s cubic-bezier(0.770, 0.125, 0.265, 1.040), transform 0.3s cubic-bezier(0.770, 0.125, 0.265, 1.040);
+}
+
+.preloader-animation .preloader__forward {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+.preloader-animation .preloader__bg::before {
+  width: 400px;
+  transition-delay: 0.5s;
+}
+
+.preloader-hidden .preloader__back {
+  opacity: 0;
+}
+
+.preloader-hidden .preloader__bg::before {
+  width: 0;
+}
+
+.preloader-hidden .preloader__forward {
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease-in-out;
+  transition-delay: 0.5s;
+}
+
+.preloader-none {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}

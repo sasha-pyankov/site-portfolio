@@ -1,0 +1,297 @@
+.project {
+  width: 100%;
+  height: 100vh;
+  background-color: $balticSea-color;
+
+  &__container {
+    height: 100%;
+  }
+
+  &__title {
+    @include adaptiv-value("font-size", 60, 25, 1);
+
+    padding-top: 100px;
+    color: $roseFog-color;
+
+    @include small-tablet {
+      padding-top: 70px;
+    }
+  }
+
+  &__swiper {
+    position: relative;
+    border-radius: 8px;
+    height: 100%;
+  }
+
+  &__slide {
+    overflow: hidden;
+  }
+}
+
+.slide {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(8, 8, 8, 0.7);
+  }
+
+  &__body {
+    height: 100%;
+    color: $porsche-color;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px 30px 80px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    row-gap: 20px;
+
+    @include small-tablet {
+      padding: 30px 15px 50px;
+    }
+  }
+
+  &__title-body {
+    position: relative;
+    margin-bottom: 70px;
+  }
+
+  &__title {
+    position: absolute;
+    font-size: 7vw;
+    letter-spacing: 8px;
+
+    &--shadow {
+			color: $lochinvar-color;
+			text-shadow: 0 0 15px $lochinvar-color;
+		}
+
+		&--text {
+			-webkit-text-fill-color: transparent;
+			-webkit-background-clip: text;
+			-webkit-text-stroke: 1px $porsche-color;
+		}
+
+    @include mobile {
+      font-size: 40px;
+    }
+  }
+
+  &__descr-tehnolog {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  &__descr {
+    display: flex;
+    column-gap: 20px;
+    flex-wrap: wrap;
+
+    img {
+      width: 50px;
+      height: 50px;
+
+      @include mobile {
+        width: 35px;
+        height: 35px;
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: inline-flex;
+    column-gap: 20px;
+    align-items: center;
+    margin-right: auto;
+    margin-bottom: 200px;
+    height: 50px;
+    font-style: italic;
+    font-size: 28px;
+    transition: transform 0.3s ease-in-out;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      border: 1px solid $porsche-color;
+      border-radius: 100%;
+      width: 50px;
+      height: 50px;
+      transform: translateX(20%);
+      transition: all 0.4s ease-in-out;
+
+      @include mobile {
+        top: 50%;
+        width: 35px;
+        height: 35px;
+        transform: translateY(-50%);
+      }
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &.focus-visible {
+      outline: 2px solid $porsche-color;
+      outline-offset: 3px;
+      border: none;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        border: none;
+        transform: translateX(20%);
+      }
+
+      &:hover::after {
+        border: none;
+        background-color: rgb(45, 150, 135, 0.7);
+      }
+    }
+
+    &:active {
+      color: $roseFog-color;
+      transform: translateX(20%);
+
+      &::after {
+        border: 1px solid $roseFog-color;
+      }
+
+      .slide__arrow-icon {
+        fill: $roseFog-color;
+      }
+    }
+
+    @include mobile {
+      column-gap: 10px;
+      margin-bottom: 150px;
+      font-size: 20px;
+    }
+  }
+
+  &__arrow-icon {
+    position: relative;
+    z-index: 1;
+    width: 60px;
+    height: 25px;
+    fill: $porsche-color;
+
+    @include mobile {
+      width: 50px;
+      height: 15px;
+    }
+  }
+
+  &__control {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    height: 60px;
+
+    @include small-tablet {
+      padding: 0 15px;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    column-gap: 40px;
+    margin-right: 20px;
+  }
+}
+
+.swiper-pagination {
+  position: relative;
+
+  &-bullet {
+    border-radius: 50px;
+    width: 2vw;
+    height: 2px;
+    background-color: $porsche-color;
+    opacity: 1;
+    transition: width 0.8s ease-in-out, 0.4s ease-in-out;
+
+    &-active {
+      width: 4vw;
+      background-color: $porsche-color;
+    }
+  }
+}
+
+.slide__arrow-icon {
+  transition: fill 0.4s ease-in-out;
+}
+
+.showcaseSlider-prev,
+.showcaseSlider-next {
+  position: relative;
+  width: 60px;
+  height: 60px;
+
+  &:focus {
+    outline: none;
+  }
+
+  &.focus-visible {
+    outline: 2px solid $porsche-color;
+    outline-offset: 3px;
+    border: none;
+  }
+
+  @media (any-hover: hover) {
+    :hover.slide__arrow-icon {
+      fill: $lochinvar-color;
+    }
+  }
+
+  @include mobile {
+    top: 10px;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.showcaseSlider-prev {
+  transform: rotate(180deg);
+}
+
+.swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+  left: 0;
+  bottom: 0;
+  display: flex;
+  width: auto;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none;
+}

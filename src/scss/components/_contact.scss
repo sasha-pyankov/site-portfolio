@@ -1,0 +1,275 @@
+.contacts {
+  overflow: hidden;
+  padding-top: 100px;
+  width: 100%;
+  height: 100vh;
+  background-color: $bigStone-color;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__title {
+    @include adaptiv-value("font-size", 60, 25, 1);
+
+    margin-bottom: 30px;
+    color: $roseFog-color;
+
+    @include mobile-height {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__top {
+    display: grid;
+    flex: 1 1 auto;
+    align-items: center;
+    grid-template-columns: repeat(12, 1fr);
+    padding-bottom: 100px;
+
+    @include mobile {
+      grid-template-columns: repeat(4, 1fr);
+      padding-bottom: 30px;
+    }
+  }
+
+  &__my {
+    display: flex;
+    flex-direction: column;
+    grid-column: 6 span;
+    row-gap: 40px;
+
+    @include mobile {
+      align-items: center;
+      row-gap: 15px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-column: 6 span;
+    min-height: 90%;
+    row-gap: 50px;
+
+    @include mobile {
+      min-height: auto;
+      row-gap: 20px;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 300px;
+
+    svg {
+      overflow: unset;
+      width: 100%;
+      height: 100%;
+
+        .path-4,
+        .path-6,
+        .path-7,
+        .path-8,
+        .path-9 {
+          transition: all 0.3s ease-in-out;
+        }
+
+      &:hover {
+        .path-4,
+        .path-6,
+        .path-7,
+        .path-8,
+        .path-9 {
+          transform: translateY(-30px);
+        }
+      }
+    }
+
+    @include mobile {
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  &__btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid $lochinvar-color;
+    width: 70%;
+    height: 60px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: $lochinvar-color;
+    transition: all 0.3s ease-in-out;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(45, 150, 135, 0.4);
+      transform: translateY(-110%);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 50%;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $lochinvar-color;
+      transform: translateY(110%);
+      transition: transform 0.2s ease-in-out 0.1s;
+    }
+
+    span {
+      position: relative;
+      z-index: 2;
+      transition: color 0.2s ease-in-out 0.1s;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &.focus-visible {
+      outline: 2px solid $porsche-color;
+      outline-offset: 3px;
+      border: none;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        border: 1px solid $porsche-color;
+      }
+
+      &:hover::before,
+      &:hover::after {
+        transform: translateX(0);
+      }
+
+      &:hover span {
+        color: $porsche-color;
+      }
+    }
+
+    &:active span {
+      color: $porsche-color;
+    }
+
+    @include mobile {
+      height: 40px;
+    }
+  }
+
+  &__bottom {
+    @include adaptiv-value("font-size", 25, 16, 1);
+
+    padding: 10px 0;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-align: center;
+    color: $black-color;
+  }
+
+  @include small-tablet {
+    padding-top: 70px;
+  }
+}
+
+.contact {
+  &__item {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 80px;
+    color: $roseFog-color;
+    transition: all 0.3s ease-in-out;
+
+    span {
+      font-size: 20px;
+      color: $lochinvar-color;
+      transition: all 0.3s ease-in-out;
+    }
+
+    p {
+      @include adaptiv-value("font-size", 20, 16, 1);
+
+      margin: 0;
+      padding: 0 20px;
+      font-style: italic;
+      transition: all 0.3s ease-in-out;
+    }
+
+    svg {
+      display: flex;
+      width: 30px;
+      height: 30px;
+      fill: $lochinvar-color;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &.focus-visible {
+      outline: 2px solid $porsche-color;
+      outline-offset: 3px;
+      border: none;
+    }
+
+    @media (any-hover: hover) {
+      &:hover .contact__arrow-icon {
+        transform: translateX(20px);
+      }
+
+      &:hover svg {
+        fill: $porsche-color;
+        scale: 1.2;
+      }
+
+      &:hover p {
+        color: $porsche-color;
+      }
+
+      &:hover span {
+        color: $porsche-color;
+        scale: 1.2;
+      }
+
+      &:hover {
+        border-top: 1px solid $porsche-color;
+        border-bottom: 1px solid $porsche-color;
+      }
+    }
+
+    &:active .contact__arrow-icon {
+      fill: $porsche-color;
+      transform: translateX(20px);
+    }
+
+    @include mobile {
+      min-height: 20px;
+    }
+  }
+}
