@@ -324,9 +324,8 @@ a {
   background-color: #111b36;
 }
 .preloader__back {
-  font-weight: 300;
   font-size: 360px;
-  line-height: 453px;
+  font-weight: 300;
   text-transform: uppercase;
   color: #2d9687;
   opacity: 0;
@@ -338,15 +337,21 @@ a {
   -webkit-animation: preloader 20s linear;
   animation: preloader 20s linear;
 }
+@media (max-width: 1300px) {
+  .preloader__back {
+    font-size: calc(60px + 300 * ((100vw - 320px) / 980));
+  }
+}
 .preloader__forward {
+  font-size: 72px;
   position: absolute;
   left: 50%;
   top: 50%;
   margin: 0;
   font-weight: 300;
   font-size: 72px;
-  line-height: 91px;
-  color: #080808;
+  white-space: nowrap;
+  color: #fff;
   opacity: 0;
   -webkit-transform: translate(-50%, -20%);
   -ms-transform: translate(-50%, -20%);
@@ -355,6 +360,16 @@ a {
   transition: opacity 0.3s cubic-bezier(0.77, 0.125, 0.265, 1.04), -webkit-transform 0.3s cubic-bezier(0.77, 0.125, 0.265, 1.04);
   transition: opacity 0.3s cubic-bezier(0.77, 0.125, 0.265, 1.04), transform 0.3s cubic-bezier(0.77, 0.125, 0.265, 1.04);
   transition: opacity 0.3s cubic-bezier(0.77, 0.125, 0.265, 1.04), transform 0.3s cubic-bezier(0.77, 0.125, 0.265, 1.04), -webkit-transform 0.3s cubic-bezier(0.77, 0.125, 0.265, 1.04);
+}
+@media (max-width: 1300px) {
+  .preloader__forward {
+    font-size: calc(20px + 52 * ((100vw - 320px) / 980));
+  }
+}
+@media (max-width: 576px) {
+  .preloader__forward {
+    font-weight: 700;
+  }
 }
 .preloader__bg {
   position: absolute;
@@ -377,6 +392,30 @@ a {
   background-color: #2d9687;
   -webkit-transition: width 0.3s cubic-bezier(0.77, 0.125, 0.265, 1.04);
   transition: width 0.3s cubic-bezier(0.77, 0.125, 0.265, 1.04);
+}
+@media (max-width: 1200px) {
+  .preloader__bg {
+    width: 350px;
+    height: 230px;
+  }
+}
+@media (max-width: 992px) {
+  .preloader__bg {
+    width: 300px;
+    height: 180px;
+  }
+}
+@media (max-width: 576px) {
+  .preloader__bg {
+    width: 200px;
+    height: 120px;
+  }
+}
+@media (max-width: 480px) {
+  .preloader__bg {
+    width: 130px;
+    height: 80px;
+  }
 }
 
 @-webkit-keyframes preloader {
@@ -416,7 +455,7 @@ a {
 }
 
 .preloader-animation .preloader__bg::before {
-  width: 400px;
+  width: 100%;
   -webkit-transition-delay: 0.5s;
   transition-delay: 0.5s;
 }
