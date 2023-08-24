@@ -54,7 +54,9 @@ if (document.querySelector('.work')) {
   ).fromTo(
     '.job__tehnolog', {xPercent: -500}, {xPercent: 0, ease: 'elastic', duration: 1}, 2.3
   ).fromTo(
-    '.job__descr', {opacity: 0}, {opacity: 1}, 3.5
+    '.job__descr', {opacity: 0}, {opacity: 1}, 2.8
+  ).fromTo(
+    '.job__git', {opacity: 0}, {opacity: 1}, 3.2
   ).fromTo(
     '.job__back', {opacity: 0}, {opacity: 1}, 3.5
   )

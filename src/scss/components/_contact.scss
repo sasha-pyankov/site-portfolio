@@ -111,7 +111,7 @@
     letter-spacing: 2px;
     text-transform: uppercase;
     color: $lochinvar-color;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out!important;
 
     &::before {
       content: '';
@@ -168,8 +168,8 @@
       }
     }
 
-    &:active span {
-      color: $porsche-color;
+    &:active {
+      transform: scale(0.9)!important;
     }
 
     @include mobile {

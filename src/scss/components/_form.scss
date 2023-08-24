@@ -165,7 +165,7 @@
     span {
       position: relative;
       z-index: 2;
-      transition: color 0.2s ease-in-out 0.2s;
+      transition: color 0.2s ease-in-out;
     }
 
     &:focus {
@@ -189,8 +189,12 @@
       }
     }
 
-    &:active span {
-      color: $porsche-color;
+    &:active {
+      transform: scale(0.9);
+
+      span {
+        color: $porsche-color;
+      }
     }
 
     @include mobile {
