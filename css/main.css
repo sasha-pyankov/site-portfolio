@@ -2207,17 +2207,6 @@ a {
   font-size: 28px;
   color: #e9b171;
 }
-.job__bottom svg {
-  position: relative;
-  top: 3px;
-  width: 45px;
-  height: 25px;
-  fill: #e9b171;
-  -webkit-transition: -webkit-transform 0.3s ease-in-out;
-  transition: -webkit-transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
-}
 @media (max-width: 768px) {
   .job__bottom {
     font-size: 20px;
@@ -2249,7 +2238,16 @@ a {
   transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
 }
 .job__git svg {
+  position: relative;
+  top: 3px;
   margin-left: 20px;
+  width: 45px;
+  height: 25px;
+  fill: #e9b171;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
 }
 @media (any-hover: hover) {
   .job__git:hover {
@@ -2264,7 +2262,7 @@ a {
   }
   .job__git svg {
     margin-right: 15px;
-    width: 35px;
+    width: 25px;
     height: 15px;
   }
 }
@@ -2283,10 +2281,19 @@ a {
   transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
 }
 .job__back svg {
+  position: relative;
+  top: 3px;
   margin-right: 20px;
+  width: 45px;
+  height: 25px;
+  fill: #e9b171;
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
 }
 @media (any-hover: hover) {
   .job__back:hover {
@@ -2300,8 +2307,7 @@ a {
     height: 30px;
   }
   .job__back svg {
-    margin-right: 15px;
-    width: 35px;
+    width: 25px;
     height: 15px;
   }
 }
