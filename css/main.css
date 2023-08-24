@@ -1499,8 +1499,8 @@ a {
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #2d9687;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out !important;
+  transition: all 0.3s ease-in-out !important;
 }
 .contacts__btn::before {
   content: "";
@@ -1561,8 +1561,10 @@ a {
     color: #e9b171;
   }
 }
-.contacts__btn:active span {
-  color: #e9b171;
+.contacts__btn:active {
+  -webkit-transform: scale(0.9) !important;
+  -ms-transform: scale(0.9) !important;
+  transform: scale(0.9) !important;
 }
 @media (max-width: 576px) {
   .contacts__btn {
@@ -1897,8 +1899,8 @@ a {
 .form__btn span {
   position: relative;
   z-index: 2;
-  -webkit-transition: color 0.2s ease-in-out 0.2s;
-  transition: color 0.2s ease-in-out 0.2s;
+  -webkit-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
 }
 .form__btn:focus {
   outline: none;
@@ -1917,6 +1919,11 @@ a {
   .form__btn:hover span {
     color: #111b36;
   }
+}
+.form__btn:active {
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
 }
 .form__btn:active span {
   color: #e9b171;
@@ -2183,6 +2190,84 @@ a {
     font-size: 14px;
   }
 }
+.job__bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 40px;
+  -moz-column-gap: 40px;
+  column-gap: 40px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-style: italic;
+  font-size: 28px;
+  color: #e9b171;
+}
+.job__bottom svg {
+  position: relative;
+  top: 3px;
+  width: 45px;
+  height: 25px;
+  fill: #e9b171;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+@media (max-width: 768px) {
+  .job__bottom {
+    font-size: 20px;
+  }
+}
+@media (max-width: 576px) {
+  .job__bottom {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-size: 16px;
+    row-gap: 20px;
+  }
+}
+.job__git {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 50px;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+.job__git svg {
+  margin-left: 20px;
+}
+@media (any-hover: hover) {
+  .job__git:hover {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+}
+@media (max-width: 768px) {
+  .job__git {
+    height: 30px;
+  }
+  .job__git svg {
+    margin-right: 15px;
+    width: 35px;
+    height: 15px;
+  }
+}
 .job__back {
   position: relative;
   display: -webkit-inline-box;
@@ -2192,28 +2277,16 @@ a {
   -ms-flex-align: center;
   align-items: center;
   height: 50px;
-  font-style: italic;
-  font-size: 28px;
-  color: #e9b171;
   -webkit-transition: -webkit-transform 0.3s ease-in-out;
   transition: -webkit-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
 }
 .job__back svg {
-  position: relative;
-  top: 3px;
   margin-right: 20px;
-  width: 45px;
-  height: 25px;
-  fill: #e9b171;
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
-  -webkit-transition: -webkit-transform 0.3s ease-in-out;
-  transition: -webkit-transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
 }
 @media (any-hover: hover) {
   .job__back:hover {
@@ -2224,7 +2297,7 @@ a {
 }
 @media (max-width: 768px) {
   .job__back {
-    font-size: 20px;
+    height: 30px;
   }
   .job__back svg {
     margin-right: 15px;
